@@ -2,9 +2,77 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Hello, World!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輸入與輸出關鍵字</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4caf50;
+            margin-top: 50px;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 500px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <h1>輸入與輸出關鍵字</h1>
+    <div class="container">
+        <p>請輸入關鍵字：</p>
+        <input type="text" id="keyword" placeholder="輸入關鍵字">
+        <button onclick="displayKeyword()">提交</button>
+        <div class="output" id="output"></div>
+    </div>
+    <script>
+        function displayKeyword() {
+            const keyword = document.getElementById("keyword").value;
+            const output = document.getElementById("output");
+            if (keyword.trim() === "") {
+                output.textContent = "請輸入有效的關鍵字！";
+                output.style.color = "red";
+            } else {
+                output.textContent = `您輸入的關鍵字是：${keyword}`;
+                output.style.color = "#4caf50";
+            }
+        }
+    </script>
 </body>
 </html>
